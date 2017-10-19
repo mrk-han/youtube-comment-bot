@@ -1,4 +1,5 @@
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,17 +14,17 @@ import java.util.*;
  */
 public class Main {
 
-	public static final String USERNAME = "";
-	public static final String PASSWORD = "";
+	public static final String USERNAME = "pubgswag@gmail.com";
+	public static final String PASSWORD = "pass1234!";
 
 
 	public static void main(String[] args) {
 		// declaration and instantiation of objects/variables
-		System.setProperty("webdriver.firefox.marionette", "/home/brian/youtubeadvertiser/geckodriver");
-		WebDriver driver = new FirefoxDriver();
+//		System.setProperty("webdriver.firefox.marionette", "/Users/markhan/Documents/Code/geckodriver");
+//		WebDriver driver = new FirefoxDriver();
 		//comment the above 2 lines and uncomment below 2 lines to use Chrome
-		//System.setProperty("webdriver.chrome.driver","G:\\chromedriver.exe");
-		//WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","/Users/markhan/Documents/Code/youtube-comment-bot/chromedriver");
+		WebDriver driver = new ChromeDriver();
 
 		String baseUrl = "https://accounts.google.com/signin";
 
@@ -100,7 +101,7 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		driver.findElement(By.cssSelector("#submit-button a[is='yt-endpoint'")).click();
+//		driver.findElement(By.cssSelector("#submit-button a[is='yt-endpoint'")).click();
 
 		try {
 			Thread.sleep(2000);
@@ -119,7 +120,7 @@ public class Main {
 
 	static void writeLog(String message) {
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter("/home/brian/youtubeadvertiser/visited.txt", true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/markhan/Documents/Code/data_log/visited.txt", true));
 			writer.append('\n');
 			writer.append(message);
 
